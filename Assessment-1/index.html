@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Employee Registration Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script type="text/javascript">
+//email validation
+    $(function() {
+      $("#register").click(function() {
+        var email = $("#email").val();
+        var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!email.match(pattern)) {
+          alert("Invalid Email Format");
+          return false;
+        }
+      })
+    })
+
+//password validation
+    $(function() {
+      $("#register").click(function() {
+        var pass = $("#psw").val();
+        var pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+
+        if (!pass.match(pattern)) {
+          alert("Invalid Password Format");
+          return false;
+        } else {
+          alert("Valid Password");
+        }
+      })
+    })
+
+//password match
+    $(function() {
+    $("#psw-repeat").keyup(function() {
+        var password = $("#psw").val();
+        $("#chkpsw").html(password == $(this).val() ? "Passwords match." : "Passwords do not match!");
+    });
+
+});
+
+
+//DOB validation
+    function dobValidate() {
+      var date = new Date();
+
+      var year = date.getFullYear();
+      var minyear = date.getFullYear() - 18;
+      var month = date.getMonth() + 1;
+      var dd = date.getDate();
+      if (month < 10) {
+        month = "0" + month;
+      }
+      if (dd < 10) {
+        dd = "0" + dd;
+      }
+
+      document.getElementById('dob').max = minyear + "-" + month + "-" + dd;
+
+    }
+
+//education selection
+    degree = ['B.Tech', 'M.Tech', 'BA', 'MA', 'B.Com'];
+    course = [
+      ['Computer Science Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Chemical Engineering'],
+      ['Computer Science Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Chemical Engineering'],
+      ['Social Science', 'Political Science'],
+      ['Social Science','Political Science'],
+      ['Applied Mathematics', 'Advance Economics', 'Statistics']
+    ];
+
+//     degree = ['Graduation' , 'PostGraduation'];
+// course  = [['Computer Science Engineering' , 'Electrical Engineering' , 'Bachelor Of Arts' , 'Economics'] , ['Computer Science Engineering' , 'Applied Mathematics' , 'Advance Economics','Advance Physics']];
+
+
+
+function fillType() {
+
+  for(i=0; i<degree.length; i++){
+    var typeDD=document.getElementById('degree');
+    var ele=document.createElement('option');
+    ele.text=degree[i];
+    typeDD.add(ele, i+1);
+  }
+}
+
+function fillData(){
+  var typeDD=document.getElementById('degree');
+  var selectedidx=typeDD.selectedIndex;
+  var dataDD=document.getElementById('course');
+  dataDD.length=1;
+
+  for(i=0; i<course[selectedidx-1].length; i++){
+
+    var ele=document.createElement('option');
+    ele.text=course[selectedidx-1][i];
+    dataDD.add(ele, i+1);
+  }
+}
+  </script>
+
+  <style media="screen">
+    .border {
+      border-style: solid;
+    }
+  </style>
+
+
+</head>
+
+<body onload="fillType()">
+
+  <form action="success.html">
+
+    <div class="container text-center border">
+      <fieldset>
+        <legend>EMPLOYEE REGISTRATION FORM</legend>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="fname" required>
+        <span style='color:red;margin-right:1.25em; display:inline-block;'>&nbsp;</span>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lname" required><br><br>
+
+        <label for="dob"><b>Date of Birth</b></label><br>
+        <input type="date" name="dob" id="dob" onclick="dobValidate()" required><br><br>
+
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required><br><br>
+
+        <label for="psw"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br><br>
+
+        <label for="psw-repeat"><b>Confirm Password</b></label><br>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br><br>
+        <div class="pswalert" id="chkpsw"></div>
+
+        <label for="psw-repeat"><b>Education</b></label><br>
+
+        <select class="" name="" id="degree" onchange="fillData()">
+          <option value="">Select Degree</option>
+        </select>
+        <span style='color:red;margin-right:1.25em; display:inline-block;'>&nbsp;</span>
+        <select class="" name="" id="course">
+          <option value="">Select Course</option>
+        </select>
+        <hr>
+
+        <button type="submit" id="register">Register</button>
+      </fieldset>
+    </div>
+
+  </form>
+
+</body>
+
+</html>
