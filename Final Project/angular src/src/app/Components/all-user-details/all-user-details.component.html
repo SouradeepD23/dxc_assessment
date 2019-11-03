@@ -1,0 +1,46 @@
+<div class="wizard-container-balance container" style="text-align:center">
+    <div class="card-balance wizard-card-balance container" style="display: inline-block;" >
+        <div class="wizard-header">
+            <h3 style="text-align: center;">
+                <b> Details</b> <br>
+             </h3>
+             <div class="card-body" >
+                <div class="merchant">
+                  <table border="1px" style="text-align: center;" >
+                    <tr>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                          ShortId
+                      </th>
+                      <th>
+                        Email
+                      </th>
+                      <th>
+                        Balance
+                      </th>
+
+                    </tr>
+
+
+
+                    <tr *ngFor="let wall of wallets">
+                      <td>
+                        {{wall.name}}
+                      </td>
+                      <td>
+                        {{wall.shortId}}
+                      </td>
+                      <td>
+                        {{wall.email}}
+                      </td>
+                      <td>
+                        {{wall.balance}}
+                      </td>
+
+
+
+                    </tr>
+
+                  </table>

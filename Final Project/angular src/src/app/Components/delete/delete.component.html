@@ -1,0 +1,23 @@
+<div class="wizard-container-balance" style="text-align:center">
+    <div class="card-balance wizard-card-balance" style="display: inline-block;" >
+        <div class="wizard-header">
+            <h3 style="text-align: center;">
+                <b> Details</b> <br>
+             </h3>
+             <div class="card-body">
+                <div class="merchant">
+                  <div>
+                    <input type="text" [(ngModel)]="wallet.email" name="searchdelete" id="searchdelete" placeholder="Enter Email">
+                  </div>
+                  <div class="form-group form-button">
+                      <input type="submit" name="searchdeletebutton" id="searchdeletebutton" class="form-submit-addmoney" value="Search" (click)="search()"/>
+                  </div>
+                  <div *ngIf="check">
+
+                      Name -> {{wallet.name}}<br>
+                      Email -> {{wallet.email}}<br>
+                      Short Id -> {{wallet.shortId}}<br>
+                      <div class="form-group form-button">
+                          <input type="submit" name="deletebutton" id="deletebutton" class="form-submit-addmoney" value="Delete" (click)="deleteUser()"/>
+                      </div>
+                  </div>

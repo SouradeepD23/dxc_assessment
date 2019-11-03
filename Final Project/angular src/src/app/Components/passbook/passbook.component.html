@@ -1,0 +1,25 @@
+<div class="wizard-container-balance" style="text-align:center">
+    <div class="card-balance wizard-card-balance" style="display: inline-block;" >
+        <div class="wizard-header">
+            <h3 style="text-align: center;">
+                <b> Recent Transactions</b> <br>
+             </h3>
+             <div class="card-body">
+                 <table border="2px" class="merchant" style="display: inline-block;">
+                     <tr>
+                            <th>Transactions</th>
+                            <th>Amount</th>
+                     </tr>
+                     <tr *ngFor="let wall of wallet.transact">
+                      <td>{{wall|split1}}</td>
+                      <td>{{wall|split2}}</td>
+
+                  </tr>
+
+
+
+                 </table>
+             </div>
+        </div>
+    </div>
+</div>

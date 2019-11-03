@@ -1,0 +1,49 @@
+<div class="wizard-container-balance" style="text-align:center">
+    <div class="card-balance wizard-card-balance" style="display: inline-block;" >
+        <div class="wizard-header">
+            <h3 style="text-align: center;">
+                <b> Pay Money</b> <br>
+             </h3>
+             <div class="card-body">
+               <div class="merchant">
+                 Merchant Name <select id="Merchant" style="font-weight: normal; width: 10cm; margin-left: 5px;" [(ngModel)]="shopName">
+                   <option>Select</option>
+                   <option>Juice Junction</option>
+                   <option>Amul Parlor</option>
+                   <option>Rolls</option>
+                   <option>DXC Food</option>
+                 </select>
+               </div>
+                <div class="form-group">
+                    <input type="number" name="payableamount" id="payableamount" placeholder="Enter Amount" [(ngModel)]="amount"/>
+                </div>
+                <div style="text-align: center;">
+                  <table style="display: inline;"> 
+                    <tr>
+                      <td>
+                          <div class="form-group form-button">
+                              <input type="submit" name="pay" id="pay" class="form-submit-addmoney" value="Pay" (click)="payMoney()"/>
+                          </div>
+                      </td>
+                      <td>
+                          <div class="form-group form-button">
+                              <input type="submit" name="cancel" id="cancel" class="form-submit-money-cancel" value="Cancel"/>
+                          </div>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </div>
+
+                
+                    
+                   
+                
+                
+
+              </div>
+         </div>  
+         
+
+    </div>
+</div>

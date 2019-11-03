@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/user-home">DXC Wallet</a>
+      </div>
+      <ul class="nav  navbar-right">
+        <li class="active"><a routerLink="/login" routerLinkActive="router-link-active" >
+          <input type="submit" name="logout" id="logout" class="logout" value="Logout" (click)="logout()"/></a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="home-container" style="text-align:center">
+  <!-- <form> -->
+      
+    <table style="display: inline-block;">
+      <tr>
+        <td>
+            <div class="form-group form-button">
+              <a routerLink="/profile" routerLinkActive="router-link-active" >
+                <input type="submit" name="profile" id="profile" class="circle-button-profile" value="Profile"/></a>
+            </div>
+        </td>
+      <td>
+            <div class="form-group form-button">
+              <a routerLink="user-home/addmoney" routerLinkActive="router-link-active"> 
+                <input type="submit" name="add" id="add" class="circle-button-add" value="Add Money"/></a>
+            </div>
+      </td>
+      <td>
+            <div class="form-group form-button">
+              <a routerLink="user-home/pay" routerLinkActive="router-link-active">
+                <input type="submit" name="pay" id="pay" class="circle-button-pay" value="Pay"/></a>
+            </div>
+      </td>
+      <td>
+            <div class="form-group form-button">
+              <a routerLink="user-home/passbook" routerLinkActive="router-link-active"> 
+                <input type="submit" name="passbook" id="passbook" class="circle-button-passbook" value="Passbook"/></a>
+            </div>
+      </td>
+      <td>
+            <div class="form-group form-button">
+              <a routerLink="user-home/transfer" routerLinkActive="router-link-active"> 
+                <input type="submit" name="transfer" id="transfer" class="circle-button-transfer" value="Transfer"/></a>
+            </div>
+      </td>
+</tr>
+</table>
+  <!-- </form> -->
+</div>
+<router-outlet></router-outlet>
+  
+         
+
+ 

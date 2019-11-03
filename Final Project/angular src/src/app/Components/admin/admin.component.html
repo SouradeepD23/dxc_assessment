@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/admin">DXC Wallet</a>
+      </div>
+      <ul class="nav  navbar-right">
+        <li class="active"><a routerLink="/login" routerLinkActive="router-link-active" >
+          <input type="submit" name="logout" id="logout" class="logout" value="Logout" (click)="logout()"/></a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="home-container" style="text-align:center">
+    <!-- <form> -->
+      <table style="display: inline-block;">
+        <tr>
+          <td>
+              <div class="form-group form-button">
+                  <a routerLink="admin/getAllUsers" routerLinkActive="router-link-active"> 
+                  <input type="submit" name="displayallusers" id="displayallusers" class="circle-button-admin" value="Display All Users"/></a>
+              </div>
+          </td>
+        <td>
+              <div class="form-group form-button">
+                <a routerLink="admin/delete" routerLinkActive="router-link-active" >
+                  <input type="submit" name="deleteuser" id="deleteuser" class="circle-button-admin" value="Delete User"/></a>
+              </div>
+        </td>
+  
+       
+  </tr>
+  </table>
+    <!-- </form> -->
+  </div>
+  <router-outlet></router-outlet>
+
+  <!-- <div *ngFor="let wall of wallets">
+    hello
+    {{wall.name}}
+  </div> -->

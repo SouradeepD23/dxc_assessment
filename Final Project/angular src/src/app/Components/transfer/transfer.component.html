@@ -1,0 +1,64 @@
+<div class="wizard-container-balance" style="text-align:center">
+    <div class="card-balance wizard-card-balance" style="display: inline-block;" >
+        <div class="wizard-header">
+            <h3 style="text-align: center;">
+                <b> Transfer Money</b> <br>
+             </h3>
+
+         </div>
+
+
+<div class="card-body">
+  <div class="form-group">
+      <input type="email" name="receiveremail" id="receiveremail" placeholder="Enter Email" [(ngModel)]="receiverEmail"/>
+  </div>
+
+  <div style="text-align: center;">
+    <table style="display: inline;" class="merchant">
+      <tr>
+        <td style="text-align: left;">
+            <p>Name :</p>
+        </td>
+        <td>
+            <div class="merchant">
+               <p>{{this.name}}</p>
+            </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+    <div class="form-group">
+        <input type="number" name="sendmoney" id="sendnumber" placeholder="Enter Amount to send" [(ngModel)]="amount"/>
+    </div>
+    <div style="text-align: center;">
+        <table style="display: inline;">
+          <tr>
+            <td>
+                <div class="form-group form-button">
+                    <input type="submit" name="validate" id="validate" class="form-submit-addmoney" value="Validate" (click)="validate()"/>
+                </div>
+            </td>
+            <td>
+                <div class="form-group form-button">
+                    <input type="submit" name="paymoney" id="paymoney" class="form-submit-addmoney" value="Send " (click)="transferMoney()"/>
+                </div>
+            </td>
+            <td>
+                <div class="form-group form-button">
+                    <input type="submit" name="cancel" id="cancel" class="form-submit-addmoney" value="Cancel"/>
+                </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+
+
+
+
+
+</div>
+
+
+    </div>
+</div>
